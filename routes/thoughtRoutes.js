@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const {
   getThoughts,
   getSingleThought,
@@ -9,19 +10,25 @@ const {
   removeReaction
 } = require('../controllers/thoughtController');
 
-router.route('/')
-  .get(getThoughts)
-  .post(createThought);
+// GET all thoughts
+router.get('/', getThoughts);
 
-router.route('/:thoughtId')
-  .get(getSingleThought)
-  .put(updateThought)
-  .delete(deleteThought);
+// GET a single thought by _id
+router.get('/:thoughtId', getSingleThought);
 
-router.route('/:thoughtId/reactions')
-  .post(addReaction);
+// POST a new thought
+router.post('/', createThought);
 
-router.route('/:thoughtId/reactions/:reactionId')
-  .delete(removeReaction);
+// PUT to update a thought by _id
+router.put('/:thoughtId', updateThought);
+
+// DELETE to remove a thought by _id
+router.delete('/:thoughtId', deleteThought);
+
+// POST to create a reaction stored in a single thought's reactions array field
+router.post('/:thoughtId/reactions', addReaction);
+
+// DELETE to pull and remove a reaction by the reaction's reactionId value
+router.delete('/:thoughtId/reactions/:reactionId', removeReaction);
 
 module.exports = router;

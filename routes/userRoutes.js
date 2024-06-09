@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const {
   getUsers,
   getSingleUser,
@@ -9,17 +10,25 @@ const {
   removeFriend
 } = require('../controllers/userController');
 
-router.route('/')
-  .get(getUsers)
-  .post(createUser);
+// GET all users
+router.get('/', getUsers);
 
-router.route('/:userId')
-  .get(getSingleUser)
-  .put(updateUser)
-  .delete(deleteUser);
+// GET a single user by _id and populated thought and friend data
+router.get('/:userId', getSingleUser);
 
-router.route('/:userId/friends/:friendId')
-  .post(addFriend)
-  .delete(removeFriend);
+// POST a new user
+router.post('/', createUser);
+
+// PUT to update a user by _id
+router.put('/:userId', updateUser);
+
+// DELETE to remove a user by _id
+router.delete('/:userId', deleteUser);
+
+// POST to add a new friend to a user's friend list
+router.post('/:userId/friends/:friendId', addFriend);
+
+// DELETE to remove a friend from a user's friend list
+router.delete('/:userId/friends/:friendId', removeFriend);
 
 module.exports = router;

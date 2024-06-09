@@ -4,7 +4,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 // Replace with your MongoDB URI from the environment variables or use a default local URI
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/social-network-api';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
 
 // Connection options to avoid deprecation warnings
 const options = {

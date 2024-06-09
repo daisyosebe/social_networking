@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const User = require('./models/User');
-const Thought = require('./models/Thought');
+const User = require('../models/User');
+const Thought = require('../models/Thought');
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/social-network-api';
 
