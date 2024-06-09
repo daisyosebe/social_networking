@@ -1,9 +1,8 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const userRoutes = require('./routes/userRoutes');
-const thoughtRoutes = require('./routes/thoughtRoutes');
+const mongoose = require('./db'); // Ensure the database connection is established
+const routes = require('./routes'); // Require the index.js file in the routes folder
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3009;
 const app = express();
 
 // Middleware
@@ -11,24 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api/users', userRoutes);
-app.use('/api/thoughts', thoughtRoutes);
-
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
-
-mongoose.connection.on('connected', () => {
-  console.log('Connected to MongoDB');
-});
-
-mongoose.connection.on('error', err => {
-  console.error(`MongoDB connection error: ${err}`);
-});
+app.use('/api', routes); // Use the routes from the routes/index.js file
 
 // Start server
 app.listen(PORT, () => {

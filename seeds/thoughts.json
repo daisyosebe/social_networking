@@ -1,0 +1,44 @@
+[
+    {
+      "_id": "60d0fe4f5311236168a109aa",
+      "thoughtText": "This is my first thought!",
+      "createdAt": "06/08/2024",
+      "username": "user1",
+      "reactions": [
+        {
+          "thoughtText": "This is a reaction to the first thought.",
+          "createdAt": "06/08/2024",
+          "username": "user2",
+          "reactionId": "60d0fe4f5311236168a109ca"
+        },
+        {
+          "thoughtText": "Another reaction to the first thought.",
+          "createdAt": "06/08/2024",
+          "username": "user3",
+          "reactionId": "60d0fe4f5311236168a109cb"
+        }
+      ]
+    },
+    {
+      "_id": "60d0fe4f5311236168a109ab",
+      "thoughtText": "Here is another thought.",
+      "createdAt": "06/08/2024",
+      "username": "user4",
+      "reactions": [
+        {
+          "thoughtText": "Reacting to another thought.",
+          "createdAt": "06/08/2024",
+          "username": "user5",
+          "reactionId": "60d0fe4f5311236168a109cc"
+        }
+      ]
+    },
+    {
+      "_id": "60d0fe4f5311236168a109ac",
+      "thoughtText": "Yet another thought for testing.",
+      "createdAt": "06/08/2024",
+      "username": "user6",
+      "reactions": []
+    }
+  ]
+  
