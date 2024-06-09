@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('./db'); // Ensure the database connection is established
 const routes = require('./routes'); // Require the index.js file in the routes folder
