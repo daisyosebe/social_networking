@@ -1,0 +1,45 @@
+[
+    {
+      "_id": "60d0fe4f5311236168a109a1",
+      "username": "user1",
+      "email": "user1@example.com",
+      "thoughts": ["60d0fe4f5311236168a109aa"],
+      "friends": ["60d0fe4f5311236168a109a2", "60d0fe4f5311236168a109a3"]
+    },
+    {
+      "_id": "60d0fe4f5311236168a109a2",
+      "username": "user2",
+      "email": "user2@example.com",
+      "thoughts": [],
+      "friends": ["60d0fe4f5311236168a109a1"]
+    },
+    {
+      "_id": "60d0fe4f5311236168a109a3",
+      "username": "user3",
+      "email": "user3@example.com",
+      "thoughts": [],
+      "friends": ["60d0fe4f5311236168a109a1"]
+    },
+    {
+      "_id": "60d0fe4f5311236168a109a4",
+      "username": "user4",
+      "email": "user4@example.com",
+      "thoughts": ["60d0fe4f5311236168a109ab"],
+      "friends": []
+    },
+    {
+      "_id": "60d0fe4f5311236168a109a5",
+      "username": "user5",
+      "email": "user5@example.com",
+      "thoughts": [],
+      "friends": []
+    },
+    {
+      "_id": "60d0fe4f5311236168a109a6",
+      "username": "user6",
+      "email": "user6@example.com",
+      "thoughts": ["60d0fe4f5311236168a109ac"],
+      "friends": []
+    }
+  ]
+  
